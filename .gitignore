@@ -1,0 +1,18 @@
+# Dataset (downloaded on first use; see data/README.md)
+data/*.data
+data/*.csv
+
+# Trained model artifacts (rebuild with `python -m src.train`)
+models/*.pkl
+models/*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Secrets / environment
+.env
+.venv/
+venv/

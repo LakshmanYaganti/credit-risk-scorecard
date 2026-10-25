@@ -1,0 +1,282 @@
+{
+  "dataset": {
+    "name": "UCI Statlog German Credit",
+    "rows": 1000,
+    "defaults": 300,
+    "default_rate": 0.3,
+    "train_rows": 700,
+    "test_rows": 300,
+    "test_defaults": 90
+  },
+  "models_test": {
+    "scorecard": {
+      "roc_auc": 0.8002116402116403,
+      "gini": 0.6004232804232805,
+      "ks": 0.4936507936507936
+    },
+    "logistic_regression": {
+      "roc_auc": 0.8010582010582011,
+      "gini": 0.6021164021164023,
+      "ks": 0.4936507936507936
+    },
+    "xgboost": {
+      "roc_auc": 0.7961904761904762,
+      "gini": 0.5923809523809525,
+      "ks": 0.4587301587301587
+    }
+  },
+  "models_cv_train_auc": {
+    "scorecard": {
+      "roc_auc": 0.7617103984450924
+    },
+    "logistic_regression": {
+      "roc_auc": 0.7634013605442177
+    },
+    "xgboost": {
+      "roc_auc": 0.7639067055393587
+    }
+  },
+  "scorecard": {
+    "base_score": 600.0,
+    "base_odds": 50.0,
+    "pdo": 20.0,
+    "approve_cutoff": 537.2,
+    "decline_cutoff": 487.1,
+    "information_values": [
+      {
+        "feature": "checking_status",
+        "iv": 0.6299955850116544
+      },
+      {
+        "feature": "duration_months",
+        "iv": 0.2575021214649003
+      },
+      {
+        "feature": "credit_history",
+        "iv": 0.2520019833753967
+      },
+      {
+        "feature": "savings_status",
+        "iv": 0.22131056750588313
+      },
+      {
+        "feature": "property",
+        "iv": 0.1386107580417404
+      },
+      {
+        "feature": "employment_since",
+        "iv": 0.1385327302935344
+      },
+      {
+        "feature": "purpose",
+        "iv": 0.12899234151902653
+      },
+      {
+        "feature": "other_installment_plans",
+        "iv": 0.11757906559613955
+      },
+      {
+        "feature": "housing",
+        "iv": 0.10270559863401599
+      },
+      {
+        "feature": "age_years",
+        "iv": 0.08562378156090797
+      },
+      {
+        "feature": "credit_amount",
+        "iv": 0.08035248609504489
+      },
+      {
+        "feature": "foreign_worker",
+        "iv": 0.06570500860633996
+      },
+      {
+        "feature": "personal_status",
+        "iv": 0.039472325703312265
+      },
+      {
+        "feature": "installment_rate_pct",
+        "iv": 0.0320720149601716
+      },
+      {
+        "feature": "other_debtors",
+        "iv": 0.02588596035263359
+      },
+      {
+        "feature": "job",
+        "iv": 0.023827063280399366
+      },
+      {
+        "feature": "telephone",
+        "iv": 0.002855489187388961
+      },
+      {
+        "feature": "existing_credits_count",
+        "iv": 0.002082804502012758
+      },
+      {
+        "feature": "residence_since_years",
+        "iv": 0.0009142264162501101
+      },
+      {
+        "feature": "dependents_count",
+        "iv": 0.0
+      }
+    ],
+    "calibration_test": [
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.02303852790980404,
+        "observed_default_rate": 0.0
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.060384835167960914,
+        "observed_default_rate": 0.1
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.09624692033411744,
+        "observed_default_rate": 0.13333333333333333
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.1386882746709867,
+        "observed_default_rate": 0.13333333333333333
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.20518943007715462,
+        "observed_default_rate": 0.23333333333333334
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.26950571010062085,
+        "observed_default_rate": 0.23333333333333334
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.3572924211688501,
+        "observed_default_rate": 0.36666666666666664
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.45367702093692386,
+        "observed_default_rate": 0.4
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.5907668739299837,
+        "observed_default_rate": 0.6666666666666666
+      },
+      {
+        "count": 30,
+        "mean_predicted_pd": 0.7607024407198933,
+        "observed_default_rate": 0.7333333333333333
+      }
+    ],
+    "band_policy": {
+      "approve_max_pd": 0.15,
+      "decline_min_pd": 0.5
+    },
+    "band_performance_test": {
+      "approve": {
+        "count": 109,
+        "share": 0.36333333333333334,
+        "bad_rate": 0.09174311926605505
+      },
+      "review": {
+        "count": 128,
+        "share": 0.4266666666666667,
+        "bad_rate": 0.296875
+      },
+      "decline": {
+        "count": 63,
+        "share": 0.21,
+        "bad_rate": 0.6666666666666666
+      }
+    },
+    "confusion_at_approve_cutoff": {
+      "cutoff": 537.1728830150892,
+      "true_good_approved": 99,
+      "true_good_declined": 111,
+      "true_bad_approved": 10,
+      "true_bad_declined": 80
+    },
+    "cutoff_tradeoff_test": [
+      {
+        "cutoff": 456.3,
+        "approval_rate": 0.95,
+        "bad_rate_among_approved": 0.27017543859649124,
+        "share_of_bads_rejected": 0.1444444444444445
+      },
+      {
+        "cutoff": 475.9,
+        "approval_rate": 0.85,
+        "bad_rate_among_approved": 0.23137254901960785,
+        "share_of_bads_rejected": 0.34444444444444444
+      },
+      {
+        "cutoff": 487.1,
+        "approval_rate": 0.79,
+        "bad_rate_among_approved": 0.20253164556962025,
+        "share_of_bads_rejected": 0.4666666666666667
+      },
+      {
+        "cutoff": 491.8,
+        "approval_rate": 0.7466666666666667,
+        "bad_rate_among_approved": 0.19196428571428573,
+        "share_of_bads_rejected": 0.5222222222222221
+      },
+      {
+        "cutoff": 504.8,
+        "approval_rate": 0.65,
+        "bad_rate_among_approved": 0.15384615384615385,
+        "share_of_bads_rejected": 0.6666666666666667
+      },
+      {
+        "cutoff": 516.1,
+        "approval_rate": 0.55,
+        "bad_rate_among_approved": 0.11515151515151516,
+        "share_of_bads_rejected": 0.7888888888888889
+      },
+      {
+        "cutoff": 526.5,
+        "approval_rate": 0.45,
+        "bad_rate_among_approved": 0.1037037037037037,
+        "share_of_bads_rejected": 0.8444444444444444
+      },
+      {
+        "cutoff": 537.2,
+        "approval_rate": 0.36333333333333334,
+        "bad_rate_among_approved": 0.09174311926605505,
+        "share_of_bads_rejected": 0.8888888888888888
+      },
+      {
+        "cutoff": 539.8,
+        "approval_rate": 0.35,
+        "bad_rate_among_approved": 0.09523809523809523,
+        "share_of_bads_rejected": 0.8888888888888888
+      },
+      {
+        "cutoff": 550.9,
+        "approval_rate": 0.25,
+        "bad_rate_among_approved": 0.08,
+        "share_of_bads_rejected": 0.9333333333333333
+      },
+      {
+        "cutoff": 567.2,
+        "approval_rate": 0.15,
+        "bad_rate_among_approved": 0.06666666666666667,
+        "share_of_bads_rejected": 0.9666666666666667
+      },
+      {
+        "cutoff": 594.5,
+        "approval_rate": 0.05,
+        "bad_rate_among_approved": 0.0,
+        "share_of_bads_rejected": 1.0
+      }
+    ]
+  }
+}
